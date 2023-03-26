@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<style>
+    body{
+    background:#01345e;
+    overflow: hidden;
+    height: 100vh;
+}
+.spinner-container{
+    position:absolute;
+    margin: auto;
+    left: 0;
+ right: 0;
+top: 0;
+bottom: 0;
+    height: 80px;
+   
+   
+}
+.skew{
+    animation: skew ease 1s infinite;
+    
+}
+.spinner {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    position: relative;
+    margin:  0 auto;
+    background: transparent;
+    border: 6px solid transparent;
+    border-bottom: 6px solid #006c84;
+    animation-name: animateCenter;
+   
+   animation-duration: 2s;
+   animation-iteration-count: infinite;
+    
+}
+.spinner::before , .spinner::after{
+    content: "";
+    position: absolute;
+    border-radius: 75%;
+    border: 6px solid transparent;
+ margin: auto;
+ left: 0;
+ right: 0;
+top: 0;
+bottom: 0;
+
+}
+.spinner::before{
+ border-bottom: 6px solid #e2e8e4;
+ height: 30%;
+ width: 30%;
+
+}
+.spinner::after{
+    border-bottom: 6px solid #6eb5c0;
+    height: 65%;
+    width: 65%;
+   
+   
+}
+@keyframes animateCenter{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(0deg) ;}
+    100%{transform: rotate(360deg);}
+}
+
+
+</style>
+<body>
+    <div class="spinner-container">
+        <div class="spinner spiral"></div>
+    </div>
+    <script src="function.js"></script>
+    
+</body>
+</html>
